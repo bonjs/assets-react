@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<script src="//cdn.bootcss.com/es5-shim/4.5.8/es5-shim.js"></script>
+		<script src="//cdn.bootcss.com/es5-shim/4.5.8/es5-sham.js"></script>
+		
+		<script src="ext/src/Ext.js"></script>
+		
+		<script src="ext/src/lang/Object.js"></script>
+		<script src="ext/src/lang/Array.js"></script>
+		<script src="ext/src/lang/Function.js"></script>
+		<script src="ext/src/class/Base.js"></script>
+		
+		<script src="ext/src/class/Class.js"></script>
+		<script src="ext/src/class/ClassManager.js"></script>
+		<script src="ext/src/class/Loader.js"></script>
+		
+		<script src=http://cdn.bootcss.com/jquery/1.12.2/jquery.min.js></script>
+		<script src=third-party/director.min.js></script>
+		
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			a {
+				height: 30px;
+				display: inline-block;
+			}
+			li {
+				list-style: none;
+			}
+			#left ul li a{
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
+			#left ul li a:hover{
+				background: #066;
+				color: white;
+			}
+			
+			#center {
+				margin-left: 204px;
+				height: 100%;
+				border: 1PX BLUE SOLID;
+			}
+			
+			label {
+				display: inline-block;
+				width: 50px;
+				text-align: right;
+			}
+			
+			.title {
+				background-color: #066;
+				height: 20px;
+				padding: 3px;
+				font-size: 15px;
+				color: white;
+			}
+			
+			[widget='js.module.UserEdit'] ul li{
+				padding: 3px;
+			}
+			
+			[widget='js.module.UserList'] ul li{
+				width: 30%;
+				border: 0px;
+				display: inline-block;
+			}
+			
+			.title {
+				font-weight: bold;
+				background-color: #066;
+				height: 20px;
+				padding: 3px;
+				font-size: 15px;
+				color: white;
+			}
+			
+			.row {
+				padding: 5px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+	    
+	    <script src="react/react.js"></script>
+	    <script src="react/react-dom.js"></script>
+	    <script src="dist/bundle.js"></script>
+	    
+		<div id=portal></div>
+		
+		<script>
+			Ext.Loader.setConfig({
+				disableCaching: false
+			});
+			
+			Ext.create('js.module.Dog', {
+				renderTo: 'portal'
+			});
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "test-react-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browserify": "^13.0.1",
+    "vinyl-source-stream": "^1.1.0",
+    "reactify": "^1.1.1",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonjs/test-react-gulp.git"
+  },
+  "author": "sun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bonjs/test-react-gulp/issues"
+  },
+  "homepage": "https://github.com/bonjs/test-react-gulp#readme"
+}
