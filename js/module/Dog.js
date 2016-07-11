@@ -3,15 +3,6 @@
  */
 E.define('js.module.Dog', {
 	renderTo: 'portal',
-	data: {
-		name:'用户管理',
-		list: [
-			{name: 'sun'},
-			{name: 'tom'},
-			{name: 'test'},
-			{name: 'aaa'},
-		]
-	},
 	template: function() {
 		return (
 			<div style={{border: "1px red solid", width: '300px'}}> 
@@ -25,6 +16,15 @@ E.define('js.module.Dog', {
 				}
 			</div>
 		)
+	},
+	data: {
+		name:'用户管理',
+		list: [
+			{name: 'sun'},
+			{name: 'tom'},
+			{name: 'test'},
+			{name: 'aaa'},
+		]
 	},
 	getInitialState: function() {
 		return this.data;
