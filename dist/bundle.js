@@ -3,16 +3,8 @@
  *author: spq 
  */
 E.define('js.module.Dog', {
+	extend: Object,
 	renderTo: 'portal',
-	data: {
-		name:'用户管理',
-		list: [
-			{name: 'sun'},
-			{name: 'tom'},
-			{name: 'test'},
-			{name: 'aaa'},
-		]
-	},
 	template: function() {
 		return (
 			React.createElement("div", {style: {border: "1px red solid", width: '300px'}}, 
@@ -27,23 +19,21 @@ E.define('js.module.Dog', {
 			)
 		)
 	},
+	data: {
+		name:'用户管理',
+		list: [
+			{name: 'sun'},
+			{name: 'tom'},
+			{name: 'test'},
+			{name: 'aaa'},
+		]
+	},
 	getInitialState: function() {
 		return this.data;
 	},
 	componentDidMount: function(r){
 		var me = this;
-		$('#add').on('click', function() {
-			var list = me.data.list;
-			list.push({ 
-				name: '新用户' + new Date().getTime()
-			})
-			me.setState({
-				list: list
-			})
-		}.bind(this))
-		$('#del').on('click', function() {
-			me.setState(me.data.list.splice(me.data.list.length - 1, 1))	
-		}.bind(this))
+		
 	},
 	setState: function(d) {
 		this.react.setState(d);
@@ -51,7 +41,6 @@ E.define('js.module.Dog', {
 	constructor: function() { 
 		var me = this;
 		this.callParent(arguments);
-		
 		var F = React.createClass({displayName: "F",
 			getInitialState: function() {
 				me.react = this;
@@ -65,7 +54,22 @@ E.define('js.module.Dog', {
 			}
 		});
 		
+		
+		
 		ReactDOM.render(React.createElement(F, null), document.getElementById(this.renderTo))
+		
+		$('#add').on('click', function() {
+			var list = me.data.list;
+			list.push({ 
+				name: '新用户' + new Date().getTime()
+			})
+			me.setState({
+				list: list
+			})
+		}.bind(this))
+		$('#del').on('click', function() {
+			me.setState(me.data.list.splice(me.data.list.length - 1, 1))	
+		}.bind(this))
 	}
 });
 },{}]},{},[1]);

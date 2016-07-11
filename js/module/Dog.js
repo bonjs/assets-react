@@ -2,6 +2,7 @@
  *author: spq 
  */
 E.define('js.module.Dog', {
+	extend: Object,
 	renderTo: 'portal',
 	template: function() {
 		return (
@@ -31,18 +32,7 @@ E.define('js.module.Dog', {
 	},
 	componentDidMount: function(r){
 		var me = this;
-		$('#add').on('click', function() {
-			var list = me.data.list;
-			list.push({ 
-				name: '新用户' + new Date().getTime()
-			})
-			me.setState({
-				list: list
-			})
-		}.bind(this))
-		$('#del').on('click', function() {
-			me.setState(me.data.list.splice(me.data.list.length - 1, 1))	
-		}.bind(this))
+		
 	},
 	setState: function(d) {
 		this.react.setState(d);
@@ -50,7 +40,6 @@ E.define('js.module.Dog', {
 	constructor: function() { 
 		var me = this;
 		this.callParent(arguments);
-		
 		var F = React.createClass({
 			getInitialState: function() {
 				me.react = this;
@@ -64,6 +53,21 @@ E.define('js.module.Dog', {
 			}
 		});
 		
+		
+		
 		ReactDOM.render(<F />, document.getElementById(this.renderTo))
+		
+		$('#add').on('click', function() {
+			var list = me.data.list;
+			list.push({ 
+				name: '新用户' + new Date().getTime()
+			})
+			me.setState({
+				list: list
+			})
+		}.bind(this))
+		$('#del').on('click', function() {
+			me.setState(me.data.list.splice(me.data.list.length - 1, 1))	
+		}.bind(this))
 	}
 });
