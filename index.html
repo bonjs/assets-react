@@ -11,6 +11,7 @@
 		<script src="//cdn.bootcss.com/es5-shim/4.5.8/es5-shim.js"></script>
 		<script src="//cdn.bootcss.com/es5-shim/4.5.8/es5-sham.js"></script>
 		
+		<!--
 		<script src="ext/src/Ext.js"></script>
 		
 		<script src="ext/src/lang/Object.js"></script>
@@ -21,9 +22,9 @@
 		<script src="ext/src/class/Class.js"></script>
 		<script src="ext/src/class/ClassManager.js"></script>
 		<script src="ext/src/class/Loader.js"></script>
+		-->
 		
 		<script src=http://cdn.bootcss.com/jquery/1.12.2/jquery.min.js></script>
-		<script src=third-party/director.min.js></script>
 		
 		<style>
 			* {
@@ -104,14 +105,17 @@
 		<div id=portal></div>
 		
 		<script>
-			Ext.Loader.setConfig({
-				disableCaching: false
-			});
-			
-			Ext.create('js.module.Dog', {
-				renderTo: 'portal'
-			});
 		
+			Ext.onReady(function() {
+				Ext.Loader.setConfig({
+					disableCaching: false
+				});
+				
+				Ext.create('js.module.Dog', {
+					renderTo: 'portal'
+				});
+			})
+			// http://blog.csdn.net/mqy1023/article/details/51607820
 		</script>
 	</body>
 </html>

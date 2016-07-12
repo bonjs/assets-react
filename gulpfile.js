@@ -4,7 +4,24 @@ var gulp = require("gulp"),
     source = require('vinyl-source-stream');
 
 gulp.task('react', function() {
-    browserify(['./js/module/Dog.js'])
+    browserify([
+    	
+    	/*
+    	'./ext/src/Ext.js',
+    	'./ext/src/lang/Object.js',
+    	'./ext/src/lang/Array.js',
+    	'./ext/src/lang/Function.js',
+    	'./ext/src/class/Base.js',
+    	'./ext/src/class/Class.js',
+    	'./ext/src/class/ClassManager.js',
+    	'./ext/src/class/Loader.js',
+    	
+    	'./core/Observable.js',
+    	'./core/Component.js',
+    	'./core/DataView.js',
+    	'./core/DataViewReact.js'*/
+    	
+    	])
         .transform(reactify)
         .bundle()
         .pipe(source('bundle.js'))
@@ -12,5 +29,5 @@ gulp.task('react', function() {
 });
 
 gulp.task('jsx', function(){
-	gulp.watch(['./js/module/Dog.js'], ['react']);
+	gulp.watch(['./js/module/*.js'], ['react']);
 });
