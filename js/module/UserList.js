@@ -1,21 +1,24 @@
 /**
  *author: spq 
  */  
-Ext.define('js.module.Dog', {
+Ext.define('js.module.UserList', {
 	extend: 'core.DataViewReact',
 	renderTo: 'portal',
 	template: function() {
-		return (     
+		return (
 			<div style={{border: "1px red solid", width: '300px'}}> 
 				<button id="add">增加</button>
 				<button id="del">删除</button>
 				{
 					this.state.list.map(function(u, i) {
-						return <li>{u.name}</li>
-					})
+						return <input onChange={this.test} value={u.name} />
+					}.bind(this))
 				}
 			</div>
 		)
+	}, 
+	test: function() {
+		console.log(this);
 	},
 	data: {
 		name:'用户管理',

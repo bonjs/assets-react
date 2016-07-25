@@ -21,6 +21,8 @@ gulp.task('react', function() {
     	'./core/DataView.js',
     	'./core/DataViewReact.js'*/
     	
+    	'./js/module/UserList.js'
+    	
     	])
         .transform(reactify)
         .bundle()
